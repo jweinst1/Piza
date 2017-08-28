@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <string>
 
+#define PIZA_SIZE_START 500
+
 //Main Piza Header
 
 class Piza
@@ -11,6 +13,11 @@ class Piza
 private:
 	char* _str;
 	std::size_t _len;
+//allocator functions
+	char* allocate(int amount)
+	{
+		return static_cast<char*>(std::malloc(sizeof(char) * amount));
+	}
 public:
 	//constructors
 	Piza();
