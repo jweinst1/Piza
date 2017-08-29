@@ -2,6 +2,7 @@
 #define PIZA_HEADER
 
 #include <cstdlib>
+#include <cstring>
 #include <string>
 
 //starting size for Piza String
@@ -19,6 +20,12 @@ private:
 	char* allocate(int amount)
 	{
 		return static_cast<char*>(std::malloc(sizeof(char) * amount));
+	}
+
+	inline void reallocate()
+	{
+		_cap *= _cap;
+		_str = static_cast<char*>(std::realloc(static_cast<void*>(_str), _cap));
 	}
 public:
 	//constructors
