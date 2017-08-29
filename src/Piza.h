@@ -16,6 +16,7 @@ private:
 	char* _str;
 	std::size_t _len;
 	std::size_t _cap;
+	char* _mark;
 //allocator functions
 	char* allocate(int amount)
 	{
@@ -46,6 +47,8 @@ public:
 	{
 		return _str + _len;
 	}
+
+	void operator += (const char ch);
 };
 
 #endif

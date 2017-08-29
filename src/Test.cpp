@@ -6,6 +6,8 @@
 
 int main(int argc, char const *argv[])
 {
-	/* code */
+	Piza testStr("foo");
+	testStr += 'h';
+	std::cout << testStr.begin() << std::endl;
 	return 0;
 }
